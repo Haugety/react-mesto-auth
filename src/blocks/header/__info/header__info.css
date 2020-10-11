@@ -1,0 +1,13 @@
+.header__info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .header__info {
+    margin-right: calc(30 / 320 * 100%);
+  }
+
+}

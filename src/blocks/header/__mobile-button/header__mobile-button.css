@@ -1,0 +1,21 @@
+.header__mobile-button {
+  width: calc(24 / 320 * 100vw);
+  background-image: url(../../../images/mobile-menu.svg);
+  padding: 0;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-size: 100% 100%;
+  margin-right: calc(30 / 320 * 100%);
+}
+
+.header__mobile-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.header__mobile-button:not(:hover) {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}

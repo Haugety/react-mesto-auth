@@ -1,0 +1,43 @@
+.sign-form__save-button {
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  border-radius: 2px;
+  background-color: #fff;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  color: #000;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+.sign-form__save-button:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sign-form__save-button:not(:hover) {
+  background-color: rgba(255, 255, 255, 1);
+  transition: background-color 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+
+  .sign-form__save-button {
+    height: 46px;
+    font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width: 399px) {
+
+  .sign-form__save-button {
+    width: 100%;
+  }
+
+}
+

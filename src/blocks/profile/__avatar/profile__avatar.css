@@ -1,0 +1,28 @@
+.profile__avatar {
+  width: calc(120 / 1280 * 100vw);
+  height: calc(120 / 1280 * 100vw);
+  margin-right: calc(30 / 880 * 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 1281px) {
+
+  .profile__avatar {
+    width: 120px;
+    height: 120px;
+    margin-right: 30px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .profile__avatar {
+    width: calc(120 / 320 * 100vw);
+    height: calc(120 / 320 * 100vw);
+    margin-right: 0;
+    margin-bottom: calc(14 / 282 * 100%);
+  }
+
+}

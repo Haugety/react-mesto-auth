@@ -1,0 +1,25 @@
+.popup__container_infotool {
+  padding: 60px 36px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+
+  .popup__container_infotool {
+    width: 300px;
+    height: fit-content;
+  }
+
+}
+
+@media screen and (max-width: 399px) {
+
+  .popup__container_infotool {
+    width: 280px;
+    height: fit-content;
+    padding: 50px 18px;
+  }
+
+}
+

@@ -1,0 +1,14 @@
+.profile__edit-avatar_icon {
+  width: calc(26 / 120 * 100%);
+  height: calc(26 / 120 * 100%);
+}
+
+@media screen and (min-width: 1281px) {
+
+  .profile__edit-avatar_icon {
+    width: 26px;
+    height: 26px;
+  }
+
+}
+

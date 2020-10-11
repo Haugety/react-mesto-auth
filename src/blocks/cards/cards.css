@@ -1,0 +1,41 @@
+@import url(./__element/cards__element.css);
+@import url(./__image/cards__image.css);
+@import url(./__row/cards__row.css);
+@import url(./__column/cards__column.css);
+@import url(./__title/cards__title.css);
+
+.cards {
+  width: inherit;
+  display: grid;
+  grid-template-columns: repeat(3, calc(282 / 880 * 100%));
+  justify-content: space-between;
+  row-gap: calc(20 / 1280 * 100vw);
+}
+
+@media screen and (min-width: 1281px) {
+
+  .cards {
+    grid-template-columns: repeat(3, 282px);
+    row-gap: 20px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .cards {
+    grid-template-columns: repeat(2, calc(325 / 676 * 100%));
+    row-gap: calc(25 / 767 * 100vw);
+  }
+
+}
+
+@media screen and (max-width: 399px) {
+
+  .cards {
+    grid-template-columns: 100%;
+    justify-content: start;
+    row-gap: calc(20 / 320 * 100vw);
+  }
+
+}

@@ -1,0 +1,22 @@
+@import url(./__mobile-menu/header__mobile-menu.css);
+@import url(./__main-menu/header__main-menu.css);
+@import url(./__logo/header__logo.css);
+@import url(./__info/header__info.css);
+@import url(./__mobile-button/header__mobile-button.css);
+@import url(./__mobile-button/_close/header__mobile-button_close.css);
+@import url(./__email/header__email.css);
+@import url(./__email/_mobile/header__email_mobile.css);
+@import url(./__link/header__link.css);
+@import url(./__link/_main/header__link_main.css);
+@import url(./__link/_mobile/header__link_mobile.css);
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    margin: 0 calc(-19 / 320 * 100vw);
+  }
+}

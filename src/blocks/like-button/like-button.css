@@ -1,0 +1,41 @@
+@import url(./__amount/like-button__amount.css);
+
+.like-button {
+  width: 20px;
+  height: 18px;
+  border: none;
+  padding: 0;
+  background-color: inherit;
+  outline: none;
+  background-image: url(../../images/deactivatedLike.svg);
+  background-size: 100% 100%;
+}
+
+.like-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.like-button:not(:hover) {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+
+  .like-button {
+    width: calc(28 / 768 * 100vw);
+    height: calc(26 / 768 * 100vw);
+  }
+
+}
+
+@media screen and (max-width: 399px) {
+
+  .like-button {
+    width: calc(20 / 320 * 100vw);
+    height: calc(18 / 320 * 100vw);
+  }
+
+}

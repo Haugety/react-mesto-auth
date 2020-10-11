@@ -1,0 +1,44 @@
+@import url(./__container/popup__container.css);
+@import url(./__container/_avatar/popup__container_avatar.css);
+@import url(./__container/_trash/popup__container_trash.css);
+@import url(./__container/_infotool/popup__container_infotool.css);
+@import url(./__close-button/popup__close-button.css);
+@import url(./__title/popup__title.css);
+@import url(./__title/_trash/popup__title_trash.css);
+@import url(./__title/_infotool/popup__title_infotool.css);
+@import url(./__input/popup__input.css);
+@import url(./__set/popup__set.css);
+@import url(./__field/popup__field.css);
+@import url(./__input-error/popup__input-error.css);
+@import url(./__input-error/_active/popup__input-error_active.css);
+@import url(./__input/_text/popup__input_text_name.css);
+@import url(./__input/_text/popup__input_text_description.css);
+@import url(./__input/_text/popup__input_text_place.css);
+@import url(./__input/_text/popup__input_text_link.css);
+@import url(./__input/_type/popup__input_type_error.css);
+@import url(./__save-button/popup__save-button.css);
+@import url(./__save-button/_inactive/popup__save-button_inactive.css);
+@import url(./__image-container/popup__image-container.css);
+@import url(./__image/popup__image.css);
+@import url(./__caption/popup__caption.css);
+@import url(./__signup-icon/popup__signup-icon.css);
+
+.popup {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .5s step-end, opacity .5s ease-in-out;
+}
+
+.popup:last-of-type {
+  background-color: rgba(0, 0, 0, 0.9);
+}

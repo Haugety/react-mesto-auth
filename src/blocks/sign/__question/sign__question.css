@@ -1,0 +1,27 @@
+.sign__question {
+  max-width: calc(358 / 880 * 100%);
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.21;
+  text-align: center;
+  margin: 0;
+}
+
+@media screen and (min-width: 1281px) {
+
+  .sign__question {
+    max-width: 358px;
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .sign__question {
+    line-height: 1.25;
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+}

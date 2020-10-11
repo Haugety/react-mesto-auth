@@ -1,0 +1,31 @@
+@import url(./__title/sign__title.css);
+@import url(./__question/sign__question.css);
+@import url(./__link/sign__link.css);
+
+.sign {
+  margin-top: calc(60 / 1280 * 100vw);
+  margin-bottom: calc(66 / 880 * 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media screen and (min-width: 1281px) {
+
+  .sign {
+    margin-top: 60px;
+    margin-bottom: 66px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .sign {
+    margin-top: calc(40 / 320 * 100vw);
+    margin-bottom: calc(48 / 282 * 100%);
+  }
+
+}

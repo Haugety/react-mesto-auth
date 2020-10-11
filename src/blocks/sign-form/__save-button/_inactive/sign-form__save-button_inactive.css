@@ -1,0 +1,8 @@
+.sign-form__save-button_inactive {
+  opacity: 0.2;
+  user-select: none;
+}
+
+.sign-form__save-button_inactive:hover {
+  cursor: default;
+}

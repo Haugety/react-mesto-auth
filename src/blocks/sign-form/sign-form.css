@@ -1,0 +1,29 @@
+@import url(./__set/sign-form__set.css);
+@import url(./__field/sign-form__field.css);
+@import url(./__input/sign-form__input.css);
+@import url(./__input-error/sign-form__input-error.css);
+@import url(./__input-error/_active/sign-form__input-error_active.css);
+@import url(./__save-button/sign-form__save-button.css);
+@import url(./__save-button/_inactive/sign-form__save-button_inactive.css);
+
+.sign-form {
+  width: calc(358 / 880 * 100%);
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 1281px) {
+
+  .sign-form {
+    width: 358px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .sign-form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+}

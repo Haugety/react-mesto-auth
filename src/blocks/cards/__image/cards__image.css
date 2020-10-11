@@ -1,0 +1,33 @@
+.cards__image {
+  width: 100%;
+  height: calc(282 / 1280 * 100vw);
+  object-fit: cover;
+}
+
+.cards__image:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1281px) {
+
+  .cards__image {
+    height: 282px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .cards__image {
+    height: calc(325 / 768 * 100vw);
+  }
+
+}
+
+@media screen and (max-width: 399px) {
+
+  .cards__image {
+    height: calc(282 / 320 * 100vw);
+  }
+
+}

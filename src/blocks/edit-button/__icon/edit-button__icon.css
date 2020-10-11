@@ -1,0 +1,23 @@
+.edit-button__icon {
+  width: calc(10 / 24 * 100%);
+  height: calc(10 / 24 * 100%);
+}
+
+@media screen and (min-width: 1281px) {
+
+  .edit-button__icon {
+    width: 10px;
+    height: 10px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .edit-button__icon {
+    width: calc(7.5 / 18 * 100%);
+    height: calc(7.5 / 18 * 100%);
+    overflow: visible;
+  }
+
+}

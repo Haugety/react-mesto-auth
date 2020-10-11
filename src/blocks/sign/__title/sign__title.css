@@ -1,0 +1,28 @@
+.sign__title {
+  max-width: calc(358 / 880 * 100%);
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: calc(50 / 1280 * 100vw);
+}
+
+@media screen and (min-width: 1281px) {
+
+  .sign__title {
+    max-width: 358px;
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .sign__title {
+    max-width: 100%;
+    font-size: calc(20 / 320 * 100vw);
+    margin-bottom: calc(40 / 320 * 100vw);
+  }
+
+}

@@ -1,0 +1,12 @@
+.popup__title_infotool {
+  text-align: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+
+  .popup__title_infotool {
+    font-size: 20px;
+  }
+
+}

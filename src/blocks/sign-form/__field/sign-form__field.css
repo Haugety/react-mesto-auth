@@ -1,0 +1,22 @@
+.sign-form__field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sign-form__field:first-of-type {
+  margin-bottom: 13px;
+}
+
+.sign-form__field:last-of-type {
+  margin-bottom: 199px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .sign-form__field:last-of-type {
+    margin-bottom: 156px;
+  }
+
+}
+

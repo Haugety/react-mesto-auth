@@ -1,0 +1,22 @@
+.header__main-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding: calc(40 / 880 * 100%) 0 calc(45 / 880 * 100%);
+}
+
+@media screen and (min-width: 1281px) {
+
+  .header__main-menu {
+    padding: 40px 0 45px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+  .header__main-menu {
+    padding: calc(27 / 320 * 100%) 0 calc(32 / 320 * 100%);
+  }
+}
+

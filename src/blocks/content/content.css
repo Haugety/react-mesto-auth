@@ -1,0 +1,23 @@
+.content {
+  margin-top: calc(36 / 1280 * 100vw);
+  margin-bottom: calc(66 / 880 * 100%);
+}
+
+
+@media screen and (min-width: 1281px) {
+
+  .content {
+    margin-top: 36px;
+    margin-bottom: 66px;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .content {
+    margin-top: calc(38 / 320 * 100vw);
+    margin-bottom: calc(48 / 282 * 100%);
+  }
+
+}

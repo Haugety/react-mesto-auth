@@ -1,0 +1,6 @@
+.header__mobile-button_close {
+  width: calc(40 / 320 * 100vw);
+  background-image: url(../../../../images/mobile-close-icon.svg);
+  background-size: cover;
+  background-position: center;
+}
