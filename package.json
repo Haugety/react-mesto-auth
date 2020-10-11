@@ -1,7 +1,7 @@
 {
   "name": "react-mesto-auth",
   "version": "0.1.0",
-  "homepage": "./",
+  "homepage": "/react-mesto-auth",
   "private": true,
   "dependencies": {
     "@react-hook/window-size": "^3.0.7",
