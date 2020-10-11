@@ -1,5 +1,7 @@
 .sign-form__input {
   border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
   border-bottom: 2px solid #ccc;
   padding: 0 0 13px;
   outline: none;
