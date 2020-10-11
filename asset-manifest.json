@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "./static/css/main.5ad7fe7a.chunk.css",
+    "main.js": "./static/js/main.d01119e4.chunk.js",
+    "main.js.map": "./static/js/main.d01119e4.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.e48908e9.js",
+    "runtime-main.js.map": "./static/js/runtime-main.e48908e9.js.map",
+    "static/js/2.685e74ba.chunk.js": "./static/js/2.685e74ba.chunk.js",
+    "static/js/2.685e74ba.chunk.js.map": "./static/js/2.685e74ba.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.b9f1896c6732a39233cbc6113496d55b.js": "./precache-manifest.b9f1896c6732a39233cbc6113496d55b.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.5ad7fe7a.chunk.css.map": "./static/css/main.5ad7fe7a.chunk.css.map",
+    "static/js/2.685e74ba.chunk.js.LICENSE.txt": "./static/js/2.685e74ba.chunk.js.LICENSE.txt",
+    "static/media/index.css": "./static/media/trash-button.4220563a.svg",
+    "static/media/mesto-logo.svg": "./static/media/mesto-logo.c6f11019.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e48908e9.js",
+    "static/js/2.685e74ba.chunk.js",
+    "static/css/main.5ad7fe7a.chunk.css",
+    "static/js/main.d01119e4.chunk.js"
+  ]
+}
