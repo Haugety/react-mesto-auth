@@ -1,6 +1,7 @@
 .content {
   margin-top: calc(36 / 1280 * 100vw);
   margin-bottom: calc(66 / 880 * 100%);
+  flex: 1 0 auto;
 }
 
 

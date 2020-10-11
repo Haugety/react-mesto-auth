@@ -1,8 +1,7 @@
 .sign-form__input {
-  border: 0;
+  border: none;
   border-bottom: 2px solid #ccc;
   padding: 0 0 13px;
-  box-sizing: border-box;
   outline: none;
   font-size: 14px;
   line-height: 1.2;

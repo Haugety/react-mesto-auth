@@ -1,9 +1,12 @@
 .page {
   width: 1280px;
   min-width: 300px;
+  min-height: 100vh;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   padding: 0 calc(200 / 1280 * 100%) calc(60 / 1280 * 100%);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   background-color: #000;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
