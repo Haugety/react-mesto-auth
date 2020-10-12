@@ -5,14 +5,19 @@
 
 **GitHub Pages:** https://haugety.github.io/react-mesto-auth/
 
-[![RegAndAuth.gif](https://s8.gifyu.com/images/RegAndAuth.gif)](https://gifyu.com/image/6JXz)
+![](https://s8.gifyu.com/images/RegAndAuth.gif)
 ![](https://s8.gifyu.com/images/Interf1.gif)
+![](https://s8.gifyu.com/images/Interf2.gif)
+![](https://s8.gifyu.com/images/Interf3.gif)
+![](https://s8.gifyu.com/images/Interf4.gif)
+![](https://s8.gifyu.com/images/Interf5.gif)
+
 
 _С помощью React реализовано:_
 1. Регистрация и авторизация пользователей (с сохранением токена в localStorage)
 2. Редактирование профиля, добавление/удаление/просмотр карточек, смена аватара, лайки
 3. Лайв-валидация форм
-4. Обновление данных профиля с помощью хуков и запросов к api
+4. Обновление данных профиля с помощью запросов на сервер
 
 _В верстке были использованы:_
 1. Способы компоновки элементов **```flexbox```** и **```grid-layout```**
