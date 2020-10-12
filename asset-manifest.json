@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/react-mesto-auth/static/css/main.ce70e63f.chunk.css",
-    "main.js": "/react-mesto-auth/static/js/main.c6204d42.chunk.js",
-    "main.js.map": "/react-mesto-auth/static/js/main.c6204d42.chunk.js.map",
+    "main.js": "/react-mesto-auth/static/js/main.687115a0.chunk.js",
+    "main.js.map": "/react-mesto-auth/static/js/main.687115a0.chunk.js.map",
     "runtime-main.js": "/react-mesto-auth/static/js/runtime-main.0e88f56d.js",
     "runtime-main.js.map": "/react-mesto-auth/static/js/runtime-main.0e88f56d.js.map",
-    "static/js/2.685e74ba.chunk.js": "/react-mesto-auth/static/js/2.685e74ba.chunk.js",
-    "static/js/2.685e74ba.chunk.js.map": "/react-mesto-auth/static/js/2.685e74ba.chunk.js.map",
+    "static/js/2.fea2b196.chunk.js": "/react-mesto-auth/static/js/2.fea2b196.chunk.js",
+    "static/js/2.fea2b196.chunk.js.map": "/react-mesto-auth/static/js/2.fea2b196.chunk.js.map",
     "index.html": "/react-mesto-auth/index.html",
-    "precache-manifest.c6080dad43597d74e207118650b1fd49.js": "/react-mesto-auth/precache-manifest.c6080dad43597d74e207118650b1fd49.js",
+    "precache-manifest.775461027e19fdf5d41997e214c0182a.js": "/react-mesto-auth/precache-manifest.775461027e19fdf5d41997e214c0182a.js",
     "service-worker.js": "/react-mesto-auth/service-worker.js",
     "static/css/main.ce70e63f.chunk.css.map": "/react-mesto-auth/static/css/main.ce70e63f.chunk.css.map",
-    "static/js/2.685e74ba.chunk.js.LICENSE.txt": "/react-mesto-auth/static/js/2.685e74ba.chunk.js.LICENSE.txt",
+    "static/js/2.fea2b196.chunk.js.LICENSE.txt": "/react-mesto-auth/static/js/2.fea2b196.chunk.js.LICENSE.txt",
     "static/media/index.css": "/react-mesto-auth/static/media/trash-button.4220563a.svg",
     "static/media/mesto-logo.svg": "/react-mesto-auth/static/media/mesto-logo.c6f11019.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0e88f56d.js",
-    "static/js/2.685e74ba.chunk.js",
+    "static/js/2.fea2b196.chunk.js",
     "static/css/main.ce70e63f.chunk.css",
-    "static/js/main.c6204d42.chunk.js"
+    "static/js/main.687115a0.chunk.js"
   ]
 }
