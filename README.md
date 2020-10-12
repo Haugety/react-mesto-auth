@@ -5,9 +5,9 @@
 
 **GitHub Pages:** https://haugety.github.io/react-mesto-auth/
 
-![Регистрация и авторизация](https://s8.gifyu.com/images/RegAndAuth.gif)
+![](./readme-gifs/RegAndAuth.gif)
 
-![](https://s8.gifyu.com/images/Interf.gif)
+![](./readme-gifs/Interf.gif)
 
 
 _С помощью React реализовано:_
