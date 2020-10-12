@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import api from '../utils/api';
+import auth from '../utils/auth';
 import ProtectedRoute from './ProtectedRoute';
 import Header from './Header';
 import Main from './Main';
@@ -77,7 +78,7 @@ function App() {
   const tockenCheck = React.useCallback(() => {
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
-      api.getContent(jwt)
+      auth.getContent(jwt)
         .then((res) => {
           if (res) {
             setUserData({
@@ -137,7 +138,7 @@ function App() {
   }
 
   function handleRegister(data) {
-    api.register(data)
+    auth.register(data)
       .then((res) => {
         setInfoTooltipType(true);
         setIsInfoTooltipOpen(true);
@@ -145,11 +146,13 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setInfoTooltipType(false);
+        setIsInfoTooltipOpen(true);
       });
   }
 
   function handleAuth(data) {
-    return api.authorize(data)
+    return auth.authorize(data)
       .then((res) => {
         setLoggedIn(true);
         localStorage.setItem('jwt', res.token);
@@ -319,6 +322,12 @@ function App() {
           isOpen={isInfoTooltipOpen}
           onClose={closeAllPopups}
           type={infoTooltipType}
+          text={
+            {
+              success: 'Вы успешно зарегистрировались!',
+              fail: 'Что-то пошло не так! Попробуйте еще раз.'
+            }
+          }
         />
 
         <Footer />

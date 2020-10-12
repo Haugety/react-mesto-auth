@@ -21,16 +21,8 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading }) {
 
   function handleChange(evt) {
     const { value } = evt.target;
-    let errors = validationErrors;
 
-    if (!regExp.url.test(value)) {
-      errors = 'Введите URL.';
-    }
-    else {
-      errors = '';
-    }
-
-    setValidationErrors(errors);
+    setValidationErrors(regExp.url.test(value) ? '' : 'Некорректный url-адрес');
   }
 
   return (

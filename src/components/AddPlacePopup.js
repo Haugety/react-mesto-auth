@@ -4,22 +4,23 @@ import { regExp } from '../utils/data';
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace, isLoading }) {
 
-  const [link, setLink] = useState('');
-  const [name, setName] = useState('');
+  const [inputValues, setInputValues] = React.useState('');
   const [validationErrors, setValidationErrors] = useState(
     {
-      name: '',
-      link: ''
+      text: '',
+      url: ''
     }
   );
 
   React.useEffect(() => {
-    setLink('');
-    setName('');
+    setInputValues({
+      placeInput: '',
+      linkInput: ''
+    });
     setValidationErrors(
       {
-        name: '',
-        link: ''
+        text: '',
+        url: ''
       }
     );
   }, [isOpen]);
@@ -27,41 +28,32 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace, isLoading }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     onAddPlace({
-      name,
-      link
+      name: inputValues.placeInput,
+      link: inputValues.linkInput
     });
   }
 
-  function handleCardName(evt) {
-    const { value } = evt.target;
-    let errors = validationErrors;
-
-    setName(value);
-
-    if (value.length < 1) {
-      errors.name = `Текст должен быть не короче 1 симв. Длина текста сейчас: ${value.length} симв.`;
-    }
-    else {
-      errors.name = '';
+  function handleErrors(value, type) {
+    if (type === 'text' && value.length < 1) {
+      return `Текст должен быть не короче 1 симв. Длина текста сейчас: ${value.length} симв.`;
     }
 
-    setValidationErrors(errors);
+    if (type === 'url' && !regExp.url.test(value)) {
+      return 'Некорректный url-адрес';
+    }
+
+    return '';
   }
 
-  function handleCardLink(evt) {
-    const { value } = evt.target;
-    let errors = validationErrors;
+  function handleInputChange(evt) {
+    const { name, value, type } = evt.target;
 
-    setLink(value);
+    setValidationErrors({...validationErrors, [type]: handleErrors(value, type)});
 
-    if (!regExp.url.test(value)) {
-      errors.link = 'Введите URL.';
-    }
-    else {
-      errors.link = '';
-    }
-
-    setValidationErrors(errors);
+    setInputValues({
+      ...inputValues,
+      [name]: value
+    });
   }
 
   return (
@@ -74,17 +66,17 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace, isLoading }) {
     >
       <fieldset className="popup__set">
         <label className="popup__field">
-          <input type="text" placeholder="Название" value={name || ''} onChange={handleCardName} onFocus={handleCardName} autoComplete="off" className="popup__input popup__input_text_place" id="place-input" name="placeInput" minLength="1" maxLength="30" required />
-          <span className="popup__input-error popup__input-error_active" id="place-input-error">{validationErrors.name}</span>
+          <input type="text" placeholder="Название" value={inputValues.placeInput || ''} onChange={handleInputChange} onFocus={handleInputChange} autoComplete="off" className="popup__input popup__input_text_place" id="place-input" name="placeInput" minLength="1" maxLength="30" required />
+          <span className="popup__input-error popup__input-error_active" id="place-input-error">{validationErrors.text}</span>
         </label>
         <label className="popup__field">
-          <input type="url" placeholder="Ссылка на картинку" value={link || ''} onChange={handleCardLink} onFocus={handleCardLink} autoComplete="off" className="popup__input popup__input_text_link" id="link-input" name="linkInput" required />
-          <span className="popup__input-error popup__input-error_active" id="link-input-error">{validationErrors.link}</span>
+          <input type="url" placeholder="Ссылка на картинку" value={inputValues.linkInput || ''} onChange={handleInputChange} onFocus={handleInputChange} autoComplete="off" className="popup__input popup__input_text_link" id="link-input" name="linkInput" required />
+          <span className="popup__input-error popup__input-error_active" id="link-input-error">{validationErrors.url}</span>
         </label>
         <button
           type="submit"
-          className={`popup__save-button ${(validationErrors.name || validationErrors.link) || !(name && link) ? 'popup__save-button_inactive' : ''}`}
-          disabled={isLoading || (validationErrors.name || validationErrors.link) || !(name && link)}
+          className={`popup__save-button ${(validationErrors.text || validationErrors.url) || !(inputValues.placeInput && inputValues.linkInput) ? 'popup__save-button_inactive' : ''}`}
+          disabled={isLoading || (validationErrors.text || validationErrors.url) || !(inputValues.placeInput && inputValues.linkInput)}
         >
           {isLoading ? 'Создание...' : 'Создать'}
         </button>

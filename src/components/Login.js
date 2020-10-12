@@ -3,17 +3,16 @@ import { NavLink } from 'react-router-dom';
 
 function Login({ onSubmit }) {
 
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [inputValues, setInputValues] = React.useState('');
   const [validationErrors, setValidationErrors] = React.useState('');
 
   function handleSubmit(evt) {
     evt.preventDefault();
 
-    if (email && password) {
+    if (inputValues.signinEmailInput && inputValues.signinPasswordInput) {
       onSubmit({
-        email: email,
-        password: password
+        email: inputValues.signinEmailInput,
+        password: inputValues.signinPasswordInput
       })
       .then((err) => {
         if (err) {
@@ -23,18 +22,14 @@ function Login({ onSubmit }) {
     }
   }
 
-  function handleEmailChange(evt) {
-    const { value } = evt.target;
+  function handleInputChange(evt) {
+    const { name, value } = evt.target;
 
     setValidationErrors('');
-    setEmail(value);
-  }
-
-  function handlePasswordChange(evt) {
-    const { value } = evt.target;
-
-    setValidationErrors('');
-    setPassword(value);
+    setInputValues({
+      ...inputValues,
+      [name]: value
+    });
   }
 
   return (
@@ -44,11 +39,11 @@ function Login({ onSubmit }) {
       <form className="sign-form" onSubmit={handleSubmit} noValidate>
         <fieldset className="sign-form__set">
           <label className="sign-form__field">
-            <input type="email" placeholder="Email" autoComplete="on" className="sign-form__input" onChange={handleEmailChange} onFocus={handleEmailChange} id="signin-email-input" name="signinEmailInput" minLength="2" maxLength="40" required />
+            <input type="email" placeholder="Email" autoComplete="on" className="sign-form__input" onChange={handleInputChange} onFocus={handleInputChange} id="signin-email-input" name="signinEmailInput" minLength="2" maxLength="40" required />
             <span className="sign-form__input-error sign-form__input-error_active" id="name-input-error">{validationErrors}</span>
           </label>
           <label className="sign-form__field">
-            <input type="password" placeholder="Пароль" autoComplete="off" className="sign-form__input" onChange={handlePasswordChange} onFocus={handlePasswordChange} id="signin-password-input" name="signinPasswordInput" minLength="6" maxLength="20" required />
+            <input type="password" placeholder="Пароль" autoComplete="off" className="sign-form__input" onChange={handleInputChange} onFocus={handleInputChange} id="signin-password-input" name="signinPasswordInput" minLength="6" maxLength="20" required />
             <span className="sign-form__input-error sign-form__input-error_active" id="name-input-error">{validationErrors}</span>
           </label>
           <button

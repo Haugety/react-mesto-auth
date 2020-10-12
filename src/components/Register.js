@@ -3,9 +3,7 @@ import { regExp } from '../utils/data';
 import { NavLink } from 'react-router-dom';
 
 function Register({ onSubmit }) {
-
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [inputValues, setInputValues] = React.useState('');
   const [validationErrors, setValidationErrors] = React.useState(
     {
       email: '',
@@ -16,44 +14,37 @@ function Register({ onSubmit }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     onSubmit({
-      email: email,
-      password: password
+      email: inputValues.signupEmailInput,
+      password: inputValues.signupPasswordInput
     });
   }
 
-  function handleEmailChange(evt) {
-    const { value } = evt.target;
-    let errors = validationErrors;
+  function handleErrors(value, type) {
+    if (type === 'password' && value.length < 6) {
 
-    setEmail(value);
+      if (value.includes(' ')) {
+        return 'Пароль не должен содержать пробелы';
+      }
 
-    if (!regExp.email.test(value)) {
-      errors.email = 'Некорректный Email';
-    }
-    else {
-      errors.email = '';
+      return `Пароль должен быть не короче 6 симв. Длина текста сейчас: ${value.length} симв.`;
     }
 
-    setValidationErrors(errors);
+    if (type === 'email' && !regExp.email.test(value)) {
+      return 'Некорректный Email-адрес';
+    }
+
+    return '';
   }
 
-  function handlePasswordChange(evt) {
-    const { value } = evt.target;
-    let errors = validationErrors;
+  function handleInputChange(evt) {
+    const { name, value, type } = evt.target;
 
-    setPassword(value);
+    setValidationErrors({ ...validationErrors, [type]: handleErrors(value, type)});
 
-    if (value.includes(' ')) {
-      errors.password = 'Пароль не должен содержать пробелы';
-    }
-    else if (value.length < 6) {
-      errors.password = `Пароль должен быть не короче 6 симв. Длина текста сейчас: ${value.length} симв.`;
-    }
-    else {
-      errors.password = '';
-    }
-
-    setValidationErrors(errors);
+    setInputValues({
+      ...inputValues,
+      [name]: value
+    });
   }
 
     return (
@@ -63,17 +54,17 @@ function Register({ onSubmit }) {
         <form className="sign-form" onSubmit={handleSubmit} noValidate>
           <fieldset className="sign-form__set">
             <label className="sign-form__field">
-              <input type="email" placeholder="Email" autoComplete="on" className="sign-form__input" onChange={handleEmailChange} onFocus={handleEmailChange} id="signup-email-input" name="signupEmailInput" maxLength="40" required />
+              <input type="email" placeholder="Email" autoComplete="on" className="sign-form__input" onChange={handleInputChange} onFocus={handleInputChange} id="signup-email-input" name="signupEmailInput" maxLength="40" required />
               <span className="sign-form__input-error sign-form__input-error_active" id="name-input-error">{validationErrors.email}</span>
             </label>
             <label className="sign-form__field">
-              <input type="password" placeholder="Пароль" autoComplete="off" className="sign-form__input" onChange={handlePasswordChange} onFocus={handlePasswordChange} id="signup-password-input" name="signupPasswordInput" minLength="6" maxLength="20" required />
+              <input type="password" placeholder="Пароль" autoComplete="off" className="sign-form__input" onChange={handleInputChange} onFocus={handleInputChange} id="signup-password-input" name="signupPasswordInput" minLength="6" maxLength="20" required />
               <span className="sign-form__input-error sign-form__input-error_active" id="name-input-error">{validationErrors.password}</span>
             </label>
             <button
               type="submit"
-              className={`sign-form__save-button ${(validationErrors.email || validationErrors.password || !email || !password) ? 'sign-form__save-button_inactive' : ''}`}
-              disabled={validationErrors.email || validationErrors.password || !email || !password}
+              className={`sign-form__save-button ${(validationErrors.email || validationErrors.password || !inputValues.signupEmailInput || !inputValues.signupPasswordInput) ? 'sign-form__save-button_inactive' : ''}`}
+              disabled={validationErrors.email || validationErrors.password || !inputValues.signupEmailInput || !inputValues.signupPasswordInput}
             >
               Зарегистрироваться
           </button>
