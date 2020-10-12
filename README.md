@@ -6,7 +6,7 @@
 **GitHub Pages:** https://haugety.github.io/react-mesto-auth/
 
 [![RegAndAuth.gif](https://s8.gifyu.com/images/RegAndAuth.gif)](https://gifyu.com/image/6JXz)
-[![Interf.gif](https://s8.gifyu.com/images/Interf.gif)](https://gifyu.com/image/6JPi)
+![](https://s8.gifyu.com/images/Interf1.gif)
 
 _С помощью React реализовано:_
 1. Регистрация и авторизация пользователей (с сохранением токена в localStorage)
