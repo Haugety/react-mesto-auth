@@ -6,7 +6,7 @@ class Auth {
   }
 
   register(data) {
-    return fetch(`${this._options.baseUrlAuth}/signup`, {
+    return fetch(`${this._options.baseUrl}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -25,7 +25,7 @@ class Auth {
   }
 
   authorize(data) {
-    return fetch(`${this._options.baseUrlAuth}/signin`, {
+    return fetch(`${this._options.baseUrl}/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -44,9 +44,9 @@ class Auth {
   }
 
   getContent(token) {
-    return fetch(`${this._options.baseUrlAuth}/users/me`, {
+    return fetch(`${this._options.baseUrl}/users/me`, {
       headers: {
-        'Authorization': `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     })

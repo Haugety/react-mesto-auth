@@ -6,10 +6,9 @@ export const regExp = {
 };
 
 const options = {
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-13',
-  baseUrlAuth: 'https://auth.nomoreparties.co',
+  // baseUrl: 'https://api.hgs.students.nomoreparties.space'
+  baseUrl: 'http://localhost:3000',
   headers: {
-    authorization: '2cf602a9-f630-4a8e-9437-bb139a960cac',
     'Content-Type': 'application/json'
   }
 };

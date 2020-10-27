@@ -7,7 +7,10 @@ class Api {
 
   getUserInfo() {
     return fetch(`${this._options.baseUrl}/users/me`, {
-      headers: this._options.headers
+      headers: {
+        ...this._options.headers,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         if (!res.ok) {
@@ -20,7 +23,10 @@ class Api {
   setUserInfo(data) {
     return fetch(`${this._options.baseUrl}/users/me`, {
       method: 'PATCH',
-      headers: this._options.headers,
+      headers: {
+        ...this._options.headers,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
+      },
       body: JSON.stringify({
         name: data.name,
         about: data.about
@@ -37,7 +43,10 @@ class Api {
   setUserAvatar(data) {
     return fetch(`${this._options.baseUrl}/users/me/avatar`, {
       method: 'PATCH',
-      headers: this._options.headers,
+      headers: {
+        ...this._options.headers,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
+      },
       body: JSON.stringify({
         avatar: data.avatar
       })
@@ -52,7 +61,10 @@ class Api {
 
   getInitialCards() {
     return fetch(`${this._options.baseUrl}/cards`, {
-      headers: this._options.headers
+      headers: {
+        ...this._options.headers,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         if (!res.ok) {
@@ -65,11 +77,14 @@ class Api {
   setCard(data) {
     return fetch(`${this._options.baseUrl}/cards`, {
       method: 'POST',
-      headers: this._options.headers,
       body: JSON.stringify({
         name: data.name,
         link: data.link
-      })
+      }),
+      headers: {
+        ...this._options.headers,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         if (!res.ok) {
@@ -82,7 +97,10 @@ class Api {
   removeCard = (cardId) => {
     return fetch(`${this._options.baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
-      headers: this._options.headers
+      headers: {
+        ...this._options.headers,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
     })
       .then((res) => {
         if (!res.ok) {
@@ -95,9 +113,12 @@ class Api {
   changeLikeCardStatus = (cardId, isLiked) => {
     if (!isLiked) {
 
-      return fetch(`${this._options.baseUrl}/cards/likes/${cardId}`, {
+      return fetch(`${this._options.baseUrl}/cards/${cardId}/likes`, {
         method: 'PUT',
-        headers: this._options.headers
+        headers: {
+          ...this._options.headers,
+          authorization: `Bearer ${localStorage.getItem('jwt')}`
+        }
       })
         .then((res) => {
           if (!res.ok) {
@@ -109,9 +130,12 @@ class Api {
     }
     else {
 
-      return fetch(`${this._options.baseUrl}/cards/likes/${cardId}`, {
+      return fetch(`${this._options.baseUrl}/cards/${cardId}/likes`, {
         method: 'DELETE',
-        headers: this._options.headers
+        headers: {
+          ...this._options.headers,
+          authorization: `Bearer ${localStorage.getItem('jwt')}`
+        }
       })
         .then((res) => {
           if (!res.ok) {

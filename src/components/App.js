@@ -42,7 +42,8 @@ function App() {
   let history = useHistory();
 
   React.useEffect(() => {
-    Promise.all([api.getUserInfo(), api.getInitialCards()])
+    if (loggedIn) {
+      Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then((data) => {
         setCurrentUser(data[0]);
         setCards(data[1]);
@@ -50,7 +51,8 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+    }
+  }, [loggedIn]);
 
   React.useEffect(() => {
 
@@ -82,8 +84,8 @@ function App() {
         .then((res) => {
           if (res) {
             setUserData({
-              id: res.data._id,
-              email: res.data.email
+              id: res._id,
+              email: res.email
             });
             setLoggedIn(true);
             history.push('/');
@@ -183,6 +185,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        closeAllPopups();
+        setInfoTooltipType(false);
+        setIsInfoTooltipOpen(true);
       });
   }
 
@@ -197,6 +202,9 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        closeAllPopups();
+        setInfoTooltipType(false);
+        setIsInfoTooltipOpen(true);
       });
   }
 
@@ -211,11 +219,14 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        closeAllPopups();
+        setInfoTooltipType(false);
+        setIsInfoTooltipOpen(true);
       });
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
 
     api.changeLikeCardStatus(card._id, isLiked)
       .then((newCard) => {
